@@ -1,0 +1,1 @@
+mvn clean package sonar:sonar -Dsonar.login=squ_5b48017e2cb1dd3a75a090b7f5226257bb339dc2
