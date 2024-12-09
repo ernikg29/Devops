@@ -54,6 +54,20 @@ public class PersonController {
         return repository.findAll();
     }
 
+    @GetMapping("/all")
+    /**
+     * Returning all persons
+     * @param auth
+     * @return
+     * @throws AuthenticationException
+     */
+    public Set<Person> findAllPerons(@RequestHeader("Authorization") String auth) throws AuthenticationException {
+        LOGGER.info("Person.findAll");
+        authService.authorize(auth);
+        return repository.findAll();
+    }
+
+
     @GetMapping("/person/lastName/{lastName}")
     /**
      * Returning all persons with lastName
